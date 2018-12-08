@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List team</title>
+</head>
+<body>
+<fieldset>
+    <legend><h1>List team</h1></legend>
+    <a th:href="@{/create-team}">Create new team</a>
+    <br/>
+    <table border="1px">
+        <tr>
+            <td>STT</td>
+            <td>ID system</td>
+            <td>Name</td>
+            <td>Discription</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+        <th:block th:each="e,start: ${teams}">
+            <tr>
+                <td th:text="${start.index + 1}"></td>
+                <td th:text="${e.id}"></td>
+                <td th:text="${e.name}"></td>
+                <td th:text="${e.discription}"></td>
+                <td><a th:href="@{/edit-team/__${e.id}__}">edit</a></td>
+                <td><a th:href="@{/delete-team/__${e.id}__}">delete</a></td>
+            </tr>
+        </th:block>
+    </table>
+</fieldset>
+</body>
+</html>

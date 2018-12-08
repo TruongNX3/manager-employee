@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete team</title>
+</head>
+<body>
+<fieldset>
+    <legend><h1>Delete team</h1></legend>
+    <a th:href="@{/teams}">Back to team list</a>
+    <form method="post" th:action="@{/delete-team}" th:object="${team}">
+        <table>
+            <tr>
+                <td>ID</td>
+                <td><input type="text" th:field="*{id}"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Discription</td>
+                <td><input type="text" th:field="*{discription}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Delete"></td>
+            </tr>
+        </table>
+    </form></fieldset>
+</body>
+</html>
