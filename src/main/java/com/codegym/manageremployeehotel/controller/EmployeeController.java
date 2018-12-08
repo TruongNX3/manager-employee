@@ -48,21 +48,14 @@ public class EmployeeController {
         return modelAndView;
     }
 
-    //    @GetMapping("employees")
-//    public ModelAndView listEmployee(@ModelAttribute("s") String s, Pageable pageable) {
-//        Page<Employee> employees;
-//        if (s.isEmpty()) {
-//            employees = employeeService.findAll(pageable);
-//        } else {
-//            employees = employeeService.findByFullNameContaining(s,pageable);
-//        }
-//        ModelAndView modelAndView = new ModelAndView("employee/list");
-//        modelAndView.addObject("employees", employees);
-//        return modelAndView;
-//    }
-    @GetMapping("employees")
-    public ModelAndView list(Pageable pageable) {
-        Page<Employee> employees = employeeService.findAll(pageable);
+        @GetMapping("employees")
+    public ModelAndView listEmployee(@ModelAttribute("s") String s, Pageable pageable) {
+        Page<Employee> employees;
+        if (s.isEmpty()) {
+            employees = employeeService.findAll(pageable);
+        } else {
+            employees = employeeService.findByFullNameContaining(s,pageable);
+        }
         ModelAndView modelAndView = new ModelAndView("employee/list");
         modelAndView.addObject("employees", employees);
         return modelAndView;
