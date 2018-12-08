@@ -20,30 +20,37 @@
             <tr>
                 <td>Name</td>
                 <td><input type="text" th:field="*{name}"></td>
+                <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
             </tr>
             <tr>
                 <td>Gender</td>
                 <td><input type="text" th:field="*{gender}"></td>
+                <td th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></td>
             </tr>
             <tr>
                 <td>Birth day</td>
                 <td><input type="text" th:field="*{birthDay}"></td>
+                <td th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}"></td>
             </tr>
             <tr>
                 <td>Phone number</td>
                 <td><input type="text" th:field="*{phoneNumber}"></td>
+                <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></td>
             </tr>
             <tr>
                 <td>ID card</td>
                 <td><input type="text" th:field="*{idCard}"></td>
+                <td th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></td>
             </tr>
             <tr>
                 <td>Email</td>
                 <td><input type="text" th:field="*{email}"></td>
+                <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
             </tr>
             <tr>
                 <td>Address</td>
                 <td><input type="text" th:field="*{address}"></td>
+                <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></td>
             </tr>
             <tr>
                 <td>Team</td>

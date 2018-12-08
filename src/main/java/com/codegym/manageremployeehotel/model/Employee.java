@@ -1,6 +1,8 @@
 package com.codegym.manageremployeehotel.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "employees")
@@ -8,12 +10,26 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private String gender;
+
+    @NotNull
     private String birthDay;
+
+    @NotNull
     private String phoneNumber;
+
+    @NotNull
     private String idCard;
+
+    @Email
     private String email;
+
+    @NotNull
     private String address;
 
     @ManyToOne
